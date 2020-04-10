@@ -1,0 +1,7 @@
+﻿
+@model Model.EF.Footer
+   
+@if(Model !=null && String.IsNullOrEmpty(Model.Content))
+{
+    @Html.Raw(Model.Content)
+}
