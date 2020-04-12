@@ -10,7 +10,6 @@ F:\WEB\OnlineShop_52\Common\obj\Debug\Common.dll
 F:\WEB\OnlineShop_52\Common\obj\Debug\Common.pdb
 C:\Users\truon\source\repos\Hieu2\Common\bin\Debug\Common.dll
 C:\Users\truon\source\repos\Hieu2\Common\bin\Debug\Common.pdb
-C:\Users\truon\source\repos\Hieu2\Common\obj\Debug\Common.csprojAssemblyReference.cache
 C:\Users\truon\source\repos\Hieu2\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\truon\source\repos\Hieu2\Common\obj\Debug\Common.dll
 C:\Users\truon\source\repos\Hieu2\Common\obj\Debug\Common.pdb

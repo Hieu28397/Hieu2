@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common;
 using Model.EF;
 
 namespace Model.Dao
@@ -23,6 +24,19 @@ namespace Model.Dao
         public ProductCategory ViewDetail(long id)
         {
             return db.ProductCategories.Find(id);
+        }
+
+        public long Create(ProductCategory producCategory)
+        {
+            if (string.IsNullOrEmpty(producCategory.MetaTitle))
+            {
+                producCategory.MetaTitle = StringHelper.ToUnsignString(producCategory.Name);
+            }
+
+            producCategory.CreatedDate = DateTime.Now;
+            db.ProductCategories.Add(producCategory);
+            db.SaveChanges();
+            return producCategory.ID;
         }
     }
 }

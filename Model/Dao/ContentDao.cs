@@ -85,6 +85,7 @@ namespace Model.Dao
             {
                 content.MetaTitle = StringHelper.ToUnsignString(content.Name);
             }
+            var a = content;
             content.CreatedDate = DateTime.Now;
             content.ViewCount = 0;
             db.Contents.Add(content);

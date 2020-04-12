@@ -1605,3 +1605,31 @@ body {
     width:200px;
     height:100px
 }
+
+.images_1_of_4 a img{
+    height:260px;
+}
+.about_shop{
+    padding:40px 20px;
+}
+.name_shop{
+    text-align:center;
+    padding-bottom:40px;
+}
+.name_shop h2{
+    text-align: center;
+    font-size:25px;
+}
+.media_shop{
+    text-align:center;
+    padding-bottom:40px;
+}
+.content_shop p{
+    font-size:20px;
+}
+.content_content p img{
+    text-align:center;
+}
+.content_content{
+    padding:40px 10px;
+}

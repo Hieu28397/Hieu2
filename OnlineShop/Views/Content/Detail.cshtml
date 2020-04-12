@@ -13,7 +13,10 @@
         <div class="clear"></div>
     </div>
     <div class="section-group">
-        @Html.Raw(Model.Detail)
+        <div class="content_content">
+            @Html.Raw(Model.Detail)
+        </div>
+
         <ul>
             @{
                 var tags = (List<Model.EF.Tag>)ViewBag.Tags;
