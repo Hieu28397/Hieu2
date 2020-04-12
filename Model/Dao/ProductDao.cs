@@ -1,4 +1,5 @@
-﻿using Model.EF;
+﻿using Common;
+using Model.EF;
 using Model.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,21 @@ namespace Model.Dao
         public List<string> ListName(string keyword)
         {
             return db.Products.Where(x => x.Name.Contains(keyword)).Select(x => x.Name).ToList();
+        }
+
+        public long Create(Product product)
+        {
+            //Xử lý alias
+            if (string.IsNullOrEmpty(product.MetaTitle))
+            {
+                product.MetaTitle = StringHelper.ToUnsignString(product.Name);
+            }
+
+            product.CreatedDate = DateTime.Now;
+            product.ViewCount = 0;
+            db.Products.Add(product);
+            db.SaveChanges();
+            return product.ID;
         }
 
         /// <summary>

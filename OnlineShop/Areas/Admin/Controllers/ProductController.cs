@@ -48,12 +48,15 @@ namespace OnlineShop.Areas.Admin.Controllers
         //}
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(Product model)
         {
             if (ModelState.IsValid)
             {
-
+                new ProductDao().Create(model);
+                return RedirectToAction("Index");
             }
+
             SetViewBag();
             return View();
         }

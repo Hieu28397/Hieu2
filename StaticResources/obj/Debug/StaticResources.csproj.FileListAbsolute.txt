@@ -17,3 +17,14 @@ F:\WEB\OnlineShop_52\StaticResources\obj\Debug\StaticResources.csproj.GenerateRe
 F:\WEB\OnlineShop_52\StaticResources\obj\Debug\en\StaticResources.resources.dll
 F:\WEB\OnlineShop_52\StaticResources\obj\Debug\StaticResources.dll
 F:\WEB\OnlineShop_52\StaticResources\obj\Debug\StaticResources.pdb
+C:\Users\truon\source\repos\Hieu2\StaticResources\bin\Debug\StaticResources.dll
+C:\Users\truon\source\repos\Hieu2\StaticResources\bin\Debug\StaticResources.pdb
+C:\Users\truon\source\repos\Hieu2\StaticResources\bin\Debug\en\StaticResources.resources.dll
+C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.csprojAssemblyReference.cache
+C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.Resources.resources
+C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.Resources.en.resources
+C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.csproj.GenerateResource.cache
+C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.csproj.CoreCompileInputs.cache
+C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\en\StaticResources.resources.dll
+C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.dll
+C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.pdb
