@@ -11,5 +11,8 @@ namespace Common
         public static string  MEMBER_GROUP  = "MEMBER";
         public static string ADMIN_GROUP = "ADMIN";
         public static string MOD_GROUP = "MOD";
+
+        public static int ORDER_APPROVED = 1;
+        public static int ORDER_NON_APPROVED = 0;
     }
 }

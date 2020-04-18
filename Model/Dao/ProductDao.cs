@@ -118,9 +118,15 @@ namespace Model.Dao
         /// <param name="top"></param>
         /// <returns></returns>
         public List<Product> ListFeatureProduct(int top)
-        {
+        {   
             return db.Products.Where(x => x.TopHot != null && x.TopHot > DateTime.Now).OrderByDescending(x => x.CreatedDate).Take(top).ToList();
         }
+
+        public List<Product> ListFeatureProductAll()
+        {
+            return db.Products.Where(x => x.TopHot != null).OrderByDescending(x => x.CreatedDate).ToList();
+        }
+
         public List<Product> ListRelatedProducts(long productId)
         {
             var product = db.Products.Find(productId);

@@ -16,6 +16,12 @@ namespace OnlineShop.Controllers
             return View(model);
         }
 
+        public ActionResult featureProducts()
+        {
+            var model = new ProductDao().ListFeatureProductAll();
+            return View(model);
+        }
+
         [ChildActionOnly]
         public PartialViewResult ProductCategory()
         {
