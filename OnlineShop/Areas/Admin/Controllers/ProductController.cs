@@ -25,27 +25,27 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View();
         }
 
-        //[HttpGet]
-        //public ActionResult Edit(long id)
-        //{
-        //    var dao = new ProductDao();
-        //    var product = dao.GetByID(id);
+        [HttpGet]
+        public ActionResult Edit(long id)
+        {
+            var dao = new ProductDao();
+            var product = dao.GetByID(id);
 
-        //    SetViewBag(product.CategoryID);
+            SetViewBag(product.CategoryID);
 
-        //    return View(product);
-        //}
+            return View(product);
+        }
 
-        //[HttpPost]
-        //public ActionResult Edit(Product model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
+        [HttpPost]
+        public ActionResult Edit(Product model)
+        {
+            if (ModelState.IsValid)
+            {
 
-        //    }
-        //    SetViewBag(model.CategoryID);
-        //    return View();
-        //}
+            }
+            SetViewBag(model.CategoryID);
+            return View();
+        }
 
         [HttpPost]
         [ValidateInput(false)]

@@ -34,5 +34,13 @@ namespace Model.Dao
         {
             return db.Orders.Where(x => x.Status == null).OrderByDescending(x => x.CreatedDate).ToList();
         }
+
+        public long Create(Order Order)
+        {            
+            Order.CreatedDate = DateTime.Now;
+            db.Orders.Add(Order);
+            db.SaveChanges();
+            return Order.ID;
+        }
     }
 }

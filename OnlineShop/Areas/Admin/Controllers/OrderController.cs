@@ -1,4 +1,5 @@
 ﻿using Model.Dao;
+using Model.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,27 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            SetViewBag();
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Create(Order model)
+        {
+            if (ModelState.IsValid)
+            {
+                new OrderDao().Create(model);
+                return RedirectToAction("Index");
+            }
+
+            SetViewBag();
+            return View();
+        }
+
         public ActionResult OrderApproved()
         {
             var model = new OrderDao().ListOrderApproved();
@@ -27,6 +49,12 @@ namespace OnlineShop.Areas.Admin.Controllers
         {
             var model = new OrderDao().ListOrderNonApproved();
             return View(model);
+        }
+
+        public void SetViewBag(long? selectedID = null)
+        {
+            var dao = new OrderDao();
+            ViewBag.CategoryID = new SelectList(dao.ListAll(), "ID", "Name", selectedID);
         }
     }
 }

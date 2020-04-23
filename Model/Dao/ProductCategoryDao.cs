@@ -38,5 +38,10 @@ namespace Model.Dao
             db.SaveChanges();
             return producCategory.ID;
         }
+
+        public ProductCategory GetByID(long id)
+        {
+            return db.ProductCategories.Find(id);
+        }
     }
 }

@@ -28,3 +28,13 @@ C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\en\StaticResources.r
 C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.dll
 C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.pdb
 C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.csprojAssemblyReference.cache
+E:\Hieu2-master\StaticResources\bin\Debug\StaticResources.dll
+E:\Hieu2-master\StaticResources\bin\Debug\StaticResources.pdb
+E:\Hieu2-master\StaticResources\bin\Debug\en\StaticResources.resources.dll
+E:\Hieu2-master\StaticResources\obj\Debug\StaticResources.csprojResolveAssemblyReference.cache
+E:\Hieu2-master\StaticResources\obj\Debug\StaticResources.Resources.resources
+E:\Hieu2-master\StaticResources\obj\Debug\StaticResources.Resources.en.resources
+E:\Hieu2-master\StaticResources\obj\Debug\StaticResources.csproj.GenerateResource.Cache
+E:\Hieu2-master\StaticResources\obj\Debug\en\StaticResources.resources.dll
+E:\Hieu2-master\StaticResources\obj\Debug\StaticResources.dll
+E:\Hieu2-master\StaticResources\obj\Debug\StaticResources.pdb

@@ -6,16 +6,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PagedList;
 
 namespace Model.Dao
 {
     public class ProductDao
     {
         OnlineShopDbContext db = null;
+        public static string USER_SESSION = "USER_SESSION";
         public ProductDao()
         {
             db = new OnlineShopDbContext();
         }
+
         public List<Product> ListAll()
         {
             return db.Products.Where(x => x.Status == true).OrderBy(y => y.Name).ToList();
@@ -117,6 +120,11 @@ namespace Model.Dao
         /// </summary>
         /// <param name="top"></param>
         /// <returns></returns>
+        /// 
+        public Product GetByID(long id)
+        {
+            return db.Products.Find(id);
+        }
         public List<Product> ListFeatureProduct(int top)
         {   
             return db.Products.Where(x => x.TopHot != null && x.TopHot > DateTime.Now).OrderByDescending(x => x.CreatedDate).Take(top).ToList();

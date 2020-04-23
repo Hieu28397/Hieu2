@@ -17,8 +17,10 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Create()
         {
+            var model = new CategoryDao().ListAll();
             return View();
         }
 
@@ -40,6 +42,34 @@ namespace OnlineShop.Areas.Admin.Controllers
                 }
             }
             return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult Edit(long id)
+        {
+            var dao = new CategoryDao();
+            var Category = dao.GetByID(id);
+
+            SetViewBag(Category.ID);
+
+            return View(Category);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Content model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            SetViewBag(model.CategoryID);
+            return View();
+        }
+
+        public void SetViewBag(long? selectedID = null)
+        {
+            var dao = new CategoryDao();
+            ViewBag.CategoryID = new SelectList(dao.ListAll(), "ID", "Name", selectedID);
         }
     }
 }

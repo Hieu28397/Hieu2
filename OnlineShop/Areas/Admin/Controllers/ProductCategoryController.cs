@@ -39,5 +39,32 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Edit(long id)
+        {
+            var dao = new ProductCategoryDao();
+            var ProductCategory = dao.GetByID(id);
+
+            SetViewBag(ProductCategory.ID);
+
+            return View(ProductCategory);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Product model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            SetViewBag(model.CategoryID);
+            return View();
+        }
+
+        public void SetViewBag(long? selectedID = null)
+        {
+            var dao = new ProductCategoryDao();
+            ViewBag.CategoryID = new SelectList(dao.ListAll(), "ID", "Name", selectedID);
+        }
     }
 }
