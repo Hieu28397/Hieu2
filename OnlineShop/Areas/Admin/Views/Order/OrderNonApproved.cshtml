@@ -6,25 +6,16 @@
 }
 
 @section header{
-    Danh sách đơn hàng
+    Danh sách đơn hàng chưa được gửi đi
 }
 
 @section jsFooter{
 
 }
 
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CustomerID)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.ShipName)
         </th>
@@ -40,18 +31,16 @@
         <th>
             @Html.DisplayNameFor(model => model.Status)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerID)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.ShipName)
             </td>
@@ -61,16 +50,20 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ShipAddress)
             </td>
-            <td>
+            <th>
                 @Html.DisplayFor(modelItem => item.ShipEmail)
+            </th>
+            <td>
+                <select>
+                    <option @Html.Raw(item.Status == 1 ? "selected" : "")> Đơn hàng đã gửi đi</option>
+                    <option @Html.Raw(item.Status == 0 ? "selected" : "")>Đơn hàng chưa được gửi</option>
+                </select>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Status)
+                @Html.DisplayFor(modelItem => item.CreatedDate)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
             </td>
         </tr>
     }

@@ -18,8 +18,13 @@ namespace Model.Dao
         }
         public List<Product> ListAll()
         {
-            return db.Products.Where(x => x.Status == true).OrderBy(y => y.Name).ToList();
+            return db.Products.Where(x => x.Status == true).OrderBy(y => y.CreatedDate).ToList();
         }
+        public List<Product> ListAllADMIN()
+        {
+            return db.Products.OrderBy(y => y.CreatedDate).ToList();
+        }
+        
 
         public List<Product> ListNewProduct(int top)
         {
@@ -135,6 +140,39 @@ namespace Model.Dao
         public Product ViewDetail(long id)
         {
             return db.Products.Find(id);
+        }
+
+        public Product GetByID(long id)
+        {
+            return db.Products.Find(id);
+        }
+
+        public bool Update(Product entity)
+        {
+            try
+            {
+                var product = db.Products.Find(entity.ID);
+                product.Name = entity.Name;
+                product.Description = entity.Description;
+                product.Image = entity.Image;
+                product.CategoryID = entity.CategoryID;
+
+
+                product.Detail = entity.Detail;
+                product.Quantity = entity.Quantity;
+                product.Status = entity.Status;
+                product.TopHot = entity.TopHot;
+
+                product.ModifiedDate = DateTime.Now;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //logging
+                return false;
+            }
+
         }
     }
 }

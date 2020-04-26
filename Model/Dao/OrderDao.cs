@@ -17,6 +17,7 @@ namespace Model.Dao
         }
         public long Insert(Order order)
         {
+            order.Status = CommonConstants.ORDER_NON_APPROVED;
             db.Orders.Add(order);
             db.SaveChanges();
             return order.ID;
@@ -32,7 +33,40 @@ namespace Model.Dao
         }
         public List<Order> ListOrderNonApproved()
         {
-            return db.Orders.Where(x => x.Status == null).OrderByDescending(x => x.CreatedDate).ToList();
+            return db.Orders.Where(x => x.Status == CommonConstants.ORDER_NON_APPROVED).OrderByDescending(x => x.CreatedDate).ToList();
+        }
+
+        public long Edit(Order order)
+        {
+            order.CreatedDate = DateTime.Now;
+            db.SaveChanges();
+            return order.ID;
+        }
+
+        public bool Update(Order entity)
+        {
+            try
+            {
+                var order = db.Orders.Find(entity.ID);
+                order.ShipName = entity.ShipName;
+                order.ShipMobile = entity.ShipMobile;
+                order.ShipAddress = entity.ShipAddress;
+                order.ShipEmail = entity.ShipEmail;
+                order.Status = entity.Status;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //logging
+                return false;
+            }
+
+        }
+
+        public Order GetByID(long id)
+        {
+            return db.Orders.Find(id);
         }
     }
 }

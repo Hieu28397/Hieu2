@@ -13,7 +13,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         // GET: Admin/Product
         public ActionResult Index()
         {
-            var model = new ProductDao().ListAll();
+            var model = new ProductDao().ListAllADMIN();
             return View(model);
         }
     
@@ -25,27 +25,31 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View();
         }
 
-        //[HttpGet]
-        //public ActionResult Edit(long id)
-        //{
-        //    var dao = new ProductDao();
-        //    var product = dao.GetByID(id);
+        [HttpGet]
+        public ActionResult Edit(long id)
+        {
+            var dao = new ProductDao();
+            var product = dao.GetByID(id);
 
-        //    SetViewBag(product.CategoryID);
+            SetViewBag(product.CategoryID);
 
-        //    return View(product);
-        //}
+            return View(product);
+        }
 
-        //[HttpPost]
-        //public ActionResult Edit(Product model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Edit(Product model)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new ProductDao();
+                var result = dao.Update(model);
 
-        //    }
-        //    SetViewBag(model.CategoryID);
-        //    return View();
-        //}
+            }
+            SetViewBag(model.CategoryID);
+            return RedirectToAction("Index");
+
+        }
 
         [HttpPost]
         [ValidateInput(false)]

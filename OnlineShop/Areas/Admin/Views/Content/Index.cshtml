@@ -55,7 +55,9 @@
                                 <tr id="row_@item.ID">
 
                                     <td>@item.Name</td>
-                                    <td>@item.Image</td>
+                                    <td> 
+                                    <img style="width: 60px ; height:60px" src="@item.Image" alt="@item.Name" />
+                                  </td>
                                     <td>@item.CreatedDate</td>
                                     <td><a href="#" class="btn-active" data-id="@item.ID">@Html.Raw(item.Status ? "<strong>Kích hoạt</strong>" : "Khoá")</a></td>
                                     <td>
