@@ -39,7 +39,7 @@ namespace OnlineShop.Controllers
         }
         public ActionResult Category(long cateId, int page = 1, int pageSize = 1)
         {
-            var category = new CategoryDao().ViewDetail(cateId);
+            var category = new ProductCategoryDao().ViewDetail(cateId);
             ViewBag.Category = category;
             int totalRecord = 0;
             var model = new ProductDao().ListByCategoryId(cateId, ref totalRecord, page, pageSize);
