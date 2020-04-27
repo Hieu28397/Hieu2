@@ -22,7 +22,12 @@ namespace OnlineShop.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+
             var model = new ProductCategory();
+
+            var dao = new ProductCategoryDao();
+            ViewBag.CategoryID = new SelectList(dao.ListAll(), "ID", "Name");
+
             return View(model);
 
         }
@@ -37,6 +42,46 @@ namespace OnlineShop.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+
+        [HttpGet]
+        public ActionResult Edit(long id)
+        {
+            var dao = new ProductCategoryDao();
+            var productCategory = dao.GetByID(id);
+
+            ViewBag.CategoryID = new SelectList(dao.ListAll(), "ID", "Name");
+
+            return View(productCategory);
+        }
+
+        public void SetViewBag(long? selectedID = null)
+        {
+            var dao = new ProductCategoryDao();
+            ViewBag.CategoryID = new SelectList(dao.ListAll(), "ID", "Name", selectedID);
+        }
+
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Edit(ProductCategory model)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new ProductCategoryDao();
+                var result = dao.Update(model);
+
+            }
+            return RedirectToAction("Index");
+
+        }
+
+        public ActionResult Delete(int id)
+        {
+            new ProductCategoryDao().Delete(id);
+
+            return RedirectToAction("Index");
         }
 
     }

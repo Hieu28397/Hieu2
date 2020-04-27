@@ -62,6 +62,7 @@ namespace Model.EF
 
         public bool? Status { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime? TopHot { get; set; }
 
         public int? ViewCount { get; set; }

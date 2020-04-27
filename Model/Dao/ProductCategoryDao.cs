@@ -38,5 +38,54 @@ namespace Model.Dao
             db.SaveChanges();
             return producCategory.ID;
         }
+
+        public ProductCategory GetByID(long id)
+        {
+            return db.ProductCategories.Find(id);
+        }
+
+
+        public bool Update(ProductCategory entity)
+        {
+            try
+            {
+                var productCategory = db.ProductCategories.Find(entity.ID);
+                productCategory.Name = entity.Name;
+                productCategory.ParentID = entity.ParentID;
+                productCategory.DisplayOrder = entity.DisplayOrder;
+                productCategory.Status = entity.Status;
+                productCategory.ShowOnHome = entity.ShowOnHome;
+
+                productCategory.ModifiedDate = DateTime.Now;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //logging
+                return false;
+            }
+
+        }
+
+
+        public bool Delete(int id)
+        {
+            try
+            {
+                var productCategory = db.ProductCategories.Find(id);
+                db.ProductCategories.Remove(productCategory);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+
+
+
     }
 }

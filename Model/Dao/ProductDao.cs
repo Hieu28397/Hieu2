@@ -174,5 +174,22 @@ namespace Model.Dao
             }
 
         }
+
+
+        public bool Delete(int id)
+        {
+            try
+            {
+                var product = db.Products.Find(id);
+                db.Products.Remove(product);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
     }
 }

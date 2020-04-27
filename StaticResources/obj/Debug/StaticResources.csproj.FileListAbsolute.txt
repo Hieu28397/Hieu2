@@ -27,4 +27,3 @@ C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.cspr
 C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\en\StaticResources.resources.dll
 C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.dll
 C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.pdb
-C:\Users\truon\source\repos\Hieu2\StaticResources\obj\Debug\StaticResources.csprojAssemblyReference.cache
